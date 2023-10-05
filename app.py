@@ -28,7 +28,6 @@ def main():
                 value = round(value*100,2)
                 v.append(value)
                 k.append(key)
-            st.success(
             with col1:
                 st.header(k[0],divider='red')
                 st.subheader(v[0])
@@ -44,7 +43,6 @@ def main():
             with col5:
                 st.header(k[4],divider='red')
                 st.subheader(v[4])
-                )
 
 if __name__ == "__main__":
     main()
