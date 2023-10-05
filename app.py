@@ -29,8 +29,9 @@ def main():
                 v.append(value)
                 k.append(key)
             vp = [str(item) + '%' for item in v]
+            result = k[0]
+            st.success('The predicted image is {}'.format(result))
             df = pd.DataFrame({'Prediction': k,'Accuracy':vp})
-            st.success('The predicted image is',k[0])
             st.dataframe(df,hide_index=True)
 
 if __name__ == "__main__":
