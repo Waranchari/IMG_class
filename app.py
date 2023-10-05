@@ -1,6 +1,6 @@
 import streamlit as st
 from transformers import pipeline
-from Pillow import Image
+from PIL import Image
 
 pipeline = pipeline(task="image-classification", model="microsoft/resnet-50")
 
