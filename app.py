@@ -1,3 +1,5 @@
+pip install Pillow
+
 import streamlit as st
 from transformers import pipeline
 from PIL import Image
