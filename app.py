@@ -21,10 +21,28 @@ def main():
         clicked = st.form_submit_button("Predict")
         if clicked:
             col1, col2, col3, col4, col5 = st.columns(5)
-            results = model.predict(image)
-            st.success('The predicted image is {}'.format(results))
-        
-                
+            results = predict(image)
+            k = [] 
+            v = []
+            for key, value in my_dict.items():
+                value = round(value*100,2)
+                v.append(value)
+                k.append(key)
+            with col1:
+                st.header(k[0],divider='red')
+                st.subheader(v[0])
+            with col2:
+                st.header(k[1],divider='red')
+                st.subheader(v[1])
+            with col3:
+                st.header(k[2],divider='red')
+                st.subheader(v[2])
+            with col4:
+                st.header(k[3],divider='red')
+                st.subheader(v[3])
+            with col5:
+                st.header(k[4],divider='red')
+                st.subheader(v[4])
 
 if __name__ == "__main__":
     main()
