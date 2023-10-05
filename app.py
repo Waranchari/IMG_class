@@ -21,7 +21,7 @@ def main():
         clicked = st.form_submit_button("Predict")
         if clicked:
             col1, col2, col3, col4, col5 = st.columns(5)
-            results = pipeline(image)
+            results = model.predict(image)
             st.success('The predicted image is {}'.format(results))
         
                 
