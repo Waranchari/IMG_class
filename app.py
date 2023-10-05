@@ -30,7 +30,8 @@ def main():
                 k.append(key)
             vp = [str(item) + '%' for item in v]
             df = pd.DataFrame({'Prediction': k,'Accuracy':vp})
-            st.dataframe(df,hide_index=True)
+            with st.sidebar:
+                st.[st.dataframe(df,hide_index=True)]
 
 if __name__ == "__main__":
     main()
