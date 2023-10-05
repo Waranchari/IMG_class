@@ -20,9 +20,11 @@ def main():
             st.image(image, caption="Uploaded Image", use_column_width=True)
         clicked = st.form_submit_button("Predict")
         if clicked:
-            results = predict(image)
-            result = results[0]
-            st.success('The predicted image is {}'.format(result))
+            col1, col2, col3, col4, col5 = st.columns(5)
+            results = pipeline(image)
+            st.success('The predicted image is {}'.format(results))
+        
+                
 
 if __name__ == "__main__":
     main()
