@@ -28,8 +28,9 @@ def main():
                 value = round(value*100,2)
                 v.append(value)
                 k.append(key)
-            df = pd.DataFrame({'Predict Value': k,'Accuracy':v})
-            st.dataframe(df,column_config={'Predict Value': 'Predict Value','Accuracy': st.column_config('Accuracy',format="%f %")})
+            vp = [str(item) + '%' for item in v]
+            df = pd.DataFrame({'Predict Value': k,'Accuracy':vp})
+            st.dataframe(df,hide_index=True)
 
 if __name__ == "__main__":
     main()
