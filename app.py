@@ -16,12 +16,13 @@ def main():
         # Display the uploaded image
         image = Image.open(uploaded_file)
         st.image(image, caption="Uploaded Image", use_column_width=True)
-        clicked = st.form_submit_button("Predict")
-        if clicked:
-            results = predict(image)
-            sorted_data = sorted(results, reverse=True)
-            top_five = sorted_data[:5]
-            st.success('The predicted image is {}'.format(top_five))
+        with st.form("my_form"):
+            clicked = st.form_submit_button("Predict")
+            if clicked:
+                results = predict(image)
+                sorted_data = sorted(results, reverse=True)
+                top_five = sorted_data[:5]
+                st.success('The predicted image is {}'.format(top_five))
 
 if __name__ == "__main__":
     main()
