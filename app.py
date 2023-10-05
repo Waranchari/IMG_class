@@ -10,17 +10,18 @@ def predict(image):
 
 def main():
     st.title("Image Classification")
-    uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
+    
+    with st.form("my_form"):
+        uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
 
-    if uploaded_file is not None:
+        if uploaded_file is not None:
         # Display the uploaded image
-        image = Image.open(uploaded_file)
-        st.image(image, caption="Uploaded Image", use_column_width=True)
-        with st.form("my_form"):
-        clicked = st.form_submit_button("Predict")
-        if clicked:
-            results = predict(image)
-            st.success('The predicted image is {}'.format(results))
+            image = Image.open(uploaded_file)
+            st.image(image, caption="Uploaded Image", use_column_width=True)
+            clicked = st.form_submit_button("Predict")
+            if clicked:
+                results = predict(image)
+                st.success('The predicted image is {}'.format(results))
 
 if __name__ == "__main__":
     main()
