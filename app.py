@@ -1,3 +1,6 @@
+!python -m pip install transformers accelerate sentencepiece emoji pythainlp --quiet
+!python -m pip install --no-deps thai2transformers==0.1.2 --quiet
+
 import streamlit as st
 from transformers import pipeline
 
