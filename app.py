@@ -21,7 +21,8 @@ def main():
         clicked = st.form_submit_button("Predict")
         if clicked:
             results = predict(image)
-            st.success('The predicted image is {}'.format(results))
+            result = results[0]
+            st.success('The predicted image is {}'.format(result))
 
 if __name__ == "__main__":
     main()
