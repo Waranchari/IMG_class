@@ -30,8 +30,7 @@ def main():
                 k.append(key)
             vp = [str(item) + '%' for item in v]
             df = pd.DataFrame({'Prediction': k,'Accuracy':vp})
-            col1 = st.columns(5)
-            col1.dataframe(df,hide_index=True)
+            st.dataframe(df,hide_index=True)
 
 if __name__ == "__main__":
     main()
