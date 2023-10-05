@@ -1,8 +1,6 @@
-pip install Pillow
-
 import streamlit as st
 from transformers import pipeline
-from PIL import Image
+from Pillow import Image
 
 pipeline = pipeline(task="image-classification", model="microsoft/resnet-50")
 
