@@ -1,5 +1,5 @@
 ---
-title: Appy
+title: Image_Classification
 emoji: ⚡
 colorFrom: yellow
 colorTo: purple
